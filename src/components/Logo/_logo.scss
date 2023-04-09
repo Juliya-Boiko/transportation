@@ -1,0 +1,22 @@
+.logo {
+  display: flex;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  color: $brand;
+}
+
+.logo__icon {
+  height: 35px;
+  margin: 0 10px 0 0;
+  @media screen and (min-width: $desktop) {
+    height: 50px;
+    margin: 0 20px 0 0;
+  }
+}
+
+.logo__title {
+  font-weight: 500;
+  font-size: 22px;
+}

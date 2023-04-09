@@ -1,0 +1,20 @@
+@import './reset';
+@import './variables';
+@import './placeholders';
+
+
+@import '../pages/AuthPage/auth-page';
+
+
+@import '../components/Logo/logo';
+
+
+@import '../components/forms/EmailForm/email-form';
+@import '../components/forms/PhoneForm/phone-form';
+
+body {
+  margin: 0;
+  font-family: 'Mulish', sans-serif;
+  box-sizing: border-box;
+  color: var(--gray-dark);
+}

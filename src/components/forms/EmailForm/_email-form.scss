@@ -1,0 +1,83 @@
+.email-form {
+  width: 100%;
+  margin: 0 0 60px 0;
+  @media screen and (min-width: $mobile) {
+    max-width: 335px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin: 0 0 100px 0;
+  }
+}
+
+.email-form__title {
+  margin: 0 0 20px 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.email-form-toggle {
+  flex-direction: column;
+  margin: 0 0 40px 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.2;
+  @extend %flex-center;
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+    margin: 0 0 40px 0;
+  }
+
+  & &--accent {
+    text-decoration: underline;
+    color: $accent;
+    cursor: pointer;
+    @media screen and (min-width: $desktop) {
+      margin: 0 0 0 10px;
+    }
+  }
+}
+
+.email-form-form {
+  display: flex;
+  flex-direction: column;
+
+  & &__wrapper {
+    position: relative;
+    margin: 0 0 40px 0;
+  }
+
+  & &__input {
+    width: 100%;
+    padding: 17px;
+    border: none;
+    outline: 1px solid $accent-complementary;
+    border-radius: $border-radius;
+    &::placeholder {
+      text-transform: capitalize;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.2;
+      color: $accent-complementary;
+    }
+  }
+
+  & &__error {
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    color: var(--danger);
+  }
+
+  & &__password-btn {
+    position: absolute;
+    top: 50%;
+    right: 17px;
+    transform: translateY(-50%);
+    @extend %button-reset;
+    svg {
+      fill: $accent-complementary;
+    }
+  }
+}
