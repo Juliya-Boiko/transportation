@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { registerUser, loginUser } from "redux/authOperations";
+import { registerUser, loginUser } from "redux/auth/authOperations";
 import { registerSchema } from "services/registerSchema";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import { Formik, Form, Field, ErrorMessage } from "formik";

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { authentication, generateRecaptcha } from "services/firebaseConfig";
-import { authUserPhone } from "redux/authOperations";
+import { authUserPhone } from "redux/auth/authOperations";
 import { signInWithPhoneNumber } from "firebase/auth";
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
@@ -86,6 +86,7 @@ export const PhoneForm = () => {
       <Button type="button" variant="primary" size="md" block="true" id="sign-in-button" disabled={phone.length < 12 || codeFormatter(code).length >= 1 ? true : false} onClick={sendCode} className="phone-form__send-btn">
         Send code
       </Button>
+      
       {flag
         ? <div>
           <div className="phone-form__wrapper">

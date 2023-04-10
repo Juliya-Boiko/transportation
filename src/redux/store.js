@@ -1,7 +1,8 @@
 //import storage from 'redux-persist/lib/storage';
 import { configureStore } from "@reduxjs/toolkit";
-import { authSlice } from "./authSlice";
-
+import { authSlice } from "./auth/authSlice";
+import { tripsSlice } from "./trips/tripsSlice";
+import { usersSlice } from "./users/usersSlice";
 // import { charactersSlice } from "./characters/charactersSlice";
 // import { authSlice } from "./auth/authSlice";
 // import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
@@ -21,7 +22,9 @@ import { authSlice } from "./authSlice";
 export const store = configureStore({
   reducer: {
     //characters: persistReducer(charactersPersistConfig, charactersSlice.reducer),
-    auth: authSlice.reducer
+    auth: authSlice.reducer,
+    trips: tripsSlice.reducer,
+    users: usersSlice.reducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }),
   // middleware: getDefaultMiddleware => getDefaultMiddleware({

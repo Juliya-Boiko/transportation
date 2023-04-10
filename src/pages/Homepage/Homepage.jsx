@@ -1,27 +1,30 @@
-import { authentication } from "services/firebaseConfig";
-import { updateProfile } from "firebase/auth";
-import { useDispatch } from "react-redux";
-import { getCurrentUser } from "redux/authOperations";
+import { Header } from 'components/Header';
 
 const Homepage = () => {
-  const dispatch = useDispatch();
-
-  const updateName = async () => {
-    await updateProfile(authentication.currentUser, {
-      displayName: "Jane Q. User", photoURL: ""
-    }).catch((error) => {
-      console.log(error);
-    });
-    dispatch(getCurrentUser());
-  };
 
   return (
-    <div>
-      <h1>Homepage</h1>
-      <button type="button" onClick={updateName}>update</button>
-      <button type="button" onClick={() => console.log('check', authentication.currentUser)}>Check</button>
+    <div className="homepage">
+      <Header />
+      <h1>Homepage:</h1>
     </div>
   );
 };
 
 export default Homepage;
+
+
+// import { updateProfile } from "firebase/auth";
+
+
+  // const updateName = async () => {
+  //   await updateProfile(authentication.currentUser, {
+  //     displayName: "Jane Q. User", photoURL: ""
+  //   }).catch((error) => {
+  //     console.log(error);
+  //   });
+  //   dispatch(getCurrentUser());
+  // };
+
+
+      // {/* <button type="button" onClick={updateName}>update</button>
+      // <button type="button" onClick={() => console.log('check', authentication.currentUser)}>Check</button> */}

@@ -1,0 +1,36 @@
+.header {
+  position: relative;
+  padding: 20px;
+  background-color: $bg-color;
+
+  & &__menu-btn {
+    width: 32px;
+    height: 32px;
+    @extend %button-reset;
+    @media screen and (min-width: $desktop) {
+      display: none;
+    }
+  }
+
+  & &__nav {
+    display: none;
+    @media screen and (min-width: $desktop) {
+      display: flex;
+    }
+  }
+
+  & &__link {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.2;
+    color: var(--gray-dark);
+    transition: $transition;
+    &:not(:last-child) {
+      margin: 0 30px 0 0;
+    }
+    &:hover {
+      color: var(--indigo);
+    }
+  }
+}

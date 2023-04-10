@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { authUserGoogle, authUserFacebook } from "redux/authOperations";
+import { authUserGoogle, authUserFacebook } from "redux/auth/authOperations";
 import { useNavigate } from "react-router-dom";
 import { EmailForm } from "components/forms/EmailForm";
 import { Logo } from "components/Logo";
@@ -24,7 +24,6 @@ const AuthPage = () => {
         <button type="button" className="auth-page__actions-btn" onClick={() => dispatch(authUserFacebook())}><GrFacebookOption size={30} /></button>
         <button type="button" className="auth-page__actions-btn" onClick={() => navigate('/auth/phone')}><FaPhone size={25} /></button>
       </div>
-
     </div>
   );
 };
