@@ -13,18 +13,20 @@ export const Header = () => {
 
   return (
     <header className="header">
-      <button type='button' onClick={() => setShowMenu(prevState => !prevState)} className='header__menu-btn'>
-        {showMenu ? <Close /> : <Burger />}
-      </button>
+      <div className='container'>
+        <button type='button' onClick={() => setShowMenu(prevState => !prevState)} className='header__menu-btn'>
+          {showMenu ? <Close /> : <Burger />}
+        </button>
 
-      <nav className='header__nav'>
-        {isAdmin ? <NavLink className="header__link">editing users</NavLink> : null}
-        <NavLink to='/' className="header__link">Homepage</NavLink>
-        <NavLink to='/trips' className="header__link">Trips</NavLink>
-        <NavLink className="header__link">Settings</NavLink>
-      </nav>
-      
-      <Menu isAdmin={isAdmin} showMenu={showMenu} />
+        <nav className='header__nav'>
+          {isAdmin ? <NavLink className="header__link" to='/users'>editing users</NavLink> : null}
+          <NavLink to='/' className="header__link">Homepage</NavLink>
+          <NavLink to='/trips' className="header__link">Trips</NavLink>
+          <NavLink className="header__link">Settings</NavLink>
+        </nav>
+        
+        <Menu isAdmin={isAdmin} showMenu={showMenu} />
+      </div>
     </header>
   );
 }

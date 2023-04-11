@@ -1,0 +1,13 @@
+.user-card {
+  &:not(:last-child) {
+    margin: 0 0 20px 0;
+  }
+
+  & &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    color: var(--primary);
+  }
+}

@@ -7,7 +7,8 @@ const Layout = lazy(() => import('../layouts/Layout'));
 const AuthPage = lazy(() => import('../pages/AuthPage/AuthPage'));
 const Homepage = lazy(() => import('../pages/Homepage/Homepage'));
 const PhonePage = lazy(() => import('../pages/PhonePage/PhonePage'));
-const TripsPage = lazy(() => import('../pages/Trips/TripsPage'));
+const TripsPage = lazy(() => import('../pages/TripsPage/TripsPage'));
+const UsersPage = lazy(() => import('../pages/UsersPage/UsersPage'));
 
 export const App = () => {
   return (
@@ -16,7 +17,7 @@ export const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index path="/" element={<PrivateRoute><Homepage /></PrivateRoute>} />
           <Route path="trips" element={<PrivateRoute><TripsPage /></PrivateRoute>} />
-
+          <Route path="users" element={<PrivateRoute><UsersPage /></PrivateRoute>} />
           <Route path="auth" element={<PublicRoute restricted><AuthPage /></PublicRoute>} />
           <Route path="auth/phone" element={<PublicRoute restricted><PhonePage /></PublicRoute>} />
         </Route>

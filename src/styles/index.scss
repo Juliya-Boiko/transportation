@@ -4,13 +4,15 @@
 
 @import '../pages/AuthPage/auth-page';
 @import '../pages/Homepage/homepage';
-@import '../pages/Trips/trips-page';
+@import '../pages/TripsPage/trips-page';
+@import '../pages/UsersPage/users-page';
 
 @import '../components/Logo/logo';
 @import '../components/Header/header';
 @import '../components/Menu/menu';
 @import '../components/Filters/filters';
 @import '../components/TripCard/trip-card';
+@import '../components/UserCard/user-card';
 @import '../components/forms/EmailForm/email-form';
 @import '../components/forms/PhoneForm/phone-form';
 
