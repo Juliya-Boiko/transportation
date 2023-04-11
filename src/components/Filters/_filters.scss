@@ -8,20 +8,51 @@
   }
 
   & &__label {
-    &:not(:last-child) {
-      margin: 0 0 20px 0;
-    }
+    margin: 0 0 20px 0;
   }
 
   & &__title {
     display: inline-block;
-    width: 60px;
+    width: 70px;
   }
 
   & &__input {
+    width: 100px;
+    height: 18px;
     padding: 0 0 5px 0;
     border: none;
     outline: none;
+    text-align: center;
     border-bottom: 1px solid $accent;
+  }
+
+  & &__picker {
+    display: flex;
+    align-items: center;
+    margin: 0 0 20px 0;
+  }
+
+  & &__reset-btn {
+    width: 10px;
+    height: 10px;
+    margin: 0 0 0 10px;
+    @extend %button-reset;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  & &__date {
+    width: 100px;
+    height: 18px;
+    padding: 0 0 5px 0;
+    text-align: center;
+    border-bottom: 1px solid $accent;
+    cursor: pointer;
+  }
+
+  .custom-rdp {
+    margin: 0;
   }
 }

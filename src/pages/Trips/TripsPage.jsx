@@ -6,7 +6,7 @@ import { Filters } from "components/Filters";
 import { TripCard } from "components/TripCard";
 
 const TripsPage = () => {
-  const [filters, setFilters] = useState({ from: '', to: '' });
+  const [filters, setFilters] = useState({ from: '', to: '', date: null });
   const dispatch = useDispatch();
   const { trips } = useSelector(state => state.trips);
 
@@ -17,6 +17,10 @@ const TripsPage = () => {
   const filtered = () => {
     const filteredFrom = trips.filter(item => item.from.toLowerCase().includes(filters.from.toLowerCase()));
     const filteredTo = filteredFrom.filter(item => item.to.toLowerCase().includes(filters.to.toLowerCase()));
+    if (filters.date) {
+      const filteredDate = filteredTo.filter(item => item.date === filters.date);
+      return filteredDate;
+    }
     return filteredTo;
   };
 
@@ -26,6 +30,7 @@ const TripsPage = () => {
       return { ...prevState, [name]: value.trim() }
     })
   };
+  console.log(filters);
 
   return (
     <>
