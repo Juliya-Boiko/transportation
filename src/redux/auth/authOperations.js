@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { authentication, providerGoogle, providerFacebook} from "services/firebaseConfig";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
@@ -82,4 +82,18 @@ export const loginUser = createAsyncThunk(
       Notify.failure(`${message}`);
     }
   }
-)
+);
+
+export const logoutUser = createAsyncThunk(
+  'auth/logout',
+  async () => {
+    try {
+      await signOut(authentication).then(() => {
+      Notify.success('Logout successfull!');
+     })
+    } catch (error) {
+      const message = error.message.split(':')[1];
+      Notify.failure(`${message}`);
+    }
+  }
+);

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { authUserGoogle, registerUser, loginUser, authUserPhone, authUserFacebook } from "./authOperations";
+import { authUserGoogle, registerUser, loginUser, authUserPhone, authUserFacebook, logoutUser } from "./authOperations";
 
 const initialState = {
   uid: null,
@@ -37,7 +37,10 @@ export const authSlice = createSlice({
       state.accesToken = payload.accesToken;
       state.isLogged = true;
     })
-  },
+    .addCase(logoutUser.fulfilled, (state) => {
+      state.uid = null;
+      state.accesToken = null;
+      state.isLogged = false;
+    })
+  },    
 });
-
-//export const { logoutUser } = authSlice.actions;

@@ -19,12 +19,12 @@ export const Header = () => {
         </button>
 
         <nav className='header__nav'>
-          {isAdmin ? <NavLink className="header__link" to='/users'>admin dashboard</NavLink> : null}
+          {isAdmin ? <NavLink className="header__link" to='/admin'>admin dashboard</NavLink> : null}
           <NavLink to='/' className="header__link">Homepage</NavLink>
           <NavLink to='/trips' className="header__link">Trips</NavLink>
-          <NavLink className="header__link">Settings</NavLink>
+          <NavLink to='/profile' className="header__link">Profile</NavLink>
         </nav>
-        
+
         <Menu isAdmin={isAdmin} showMenu={showMenu} />
       </div>
     </header>

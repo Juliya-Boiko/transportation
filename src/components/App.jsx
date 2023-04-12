@@ -9,6 +9,7 @@ const Homepage = lazy(() => import('../pages/Homepage/Homepage'));
 const PhonePage = lazy(() => import('../pages/PhonePage/PhonePage'));
 const TripsPage = lazy(() => import('../pages/TripsPage/TripsPage'));
 const AdminPage = lazy(() => import('../pages/AdminPage/AdminPage'));
+const ProfilePage = lazy(() => import('../pages/ProfilePage/ProfilePage'));
 
 export const App = () => {
   return (
@@ -17,7 +18,9 @@ export const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index path="/" element={<PrivateRoute><Homepage /></PrivateRoute>} />
           <Route path="trips" element={<PrivateRoute><TripsPage /></PrivateRoute>} />
-          <Route path="users" element={<PrivateRoute><AdminPage /></PrivateRoute>} />
+          <Route path="admin" element={<PrivateRoute><AdminPage /></PrivateRoute>} />
+          <Route path="profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
+          
           <Route path="auth" element={<PublicRoute restricted><AuthPage /></PublicRoute>} />
           <Route path="auth/phone" element={<PublicRoute restricted><PhonePage /></PublicRoute>} />
         </Route>
