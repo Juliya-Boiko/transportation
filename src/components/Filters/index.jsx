@@ -13,41 +13,46 @@ export const Filters = ({ values, onChange }) => {
   
   return (
     <div className="filters">
-      <label htmlFor="from-filter" className="filters__label">
-        <span className="filters__title">From: </span>
-        <input
-          id="from-filter"
-          name="from"
-          type="text"
-          value={values.from}
-          onChange={onChange}
-          className="filters__input"
-        />
-      </label>
-      
-      <label htmlFor="to-filter" className="filters__label">
-        <span className="filters__title">To: </span>
-        <input
-          id="to-filter"
-          name="to"
-          type="text"
-          value={values.to}
-          onChange={onChange}
-          className="filters__input"
-        />
-      </label>
 
-      <div className='filters__picker'>
-        <span className="filters__title">Date: </span>
-        <span name="date" className='filters__date' onClick={() => setShowPicker(prevState => !prevState)} >{values.date}</span>
+      <div className='filters__block'>
+        <label htmlFor="from-filter" className='filters__label'>
+          <span className='filters__title'>From</span>
+          <input
+            type="text"
+            id="from-filter"
+            name="from"
+            value={values.from}
+            placeholder='Kyiv'
+            onChange={onChange}
+            className='filters__input' />
+        </label>
+
+        <label htmlFor="to-filter" className='filters__label'>
+          <span className='filters__title'>To</span>
+          <input
+            type="text"
+            id="to-filter"
+            name="to"
+            value={values.to}
+            placeholder='Odesa'
+            onChange={onChange}
+            className='filters__input' />
+        </label>
+      </div>
+
+      <div className='filters__date'>
         {values.date
-          ?  <button type='button' className='filters__reset-btn' onClick={() => onChange({ target: { name: 'date', value: '' } })}><Reset /></button>
-          : null
-        }
+          ? <div className='filters__picked'>
+              {values.date}
+              <button type='button' className='filters__reset-btn' onClick={() => onChange({ target: { name: 'date', value: '' } })}>
+                <Reset />
+              </button>
+            </div>
+          : <span onClick={() => setShowPicker(prevState => !prevState)}>Choose date</span>}
       </div>
 
       {showPicker
-        ? <DayPicker mode="single" selected={values.date} onSelect={selectHandler} className='custom-rdp' /> 
+        ? <DayPicker mode="single" selected={values.date} onSelect={selectHandler} className='filters__rdp' /> 
         : null
       }
 

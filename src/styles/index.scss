@@ -5,7 +5,7 @@
 @import '../pages/AuthPage/auth-page';
 @import '../pages/Homepage/homepage';
 @import '../pages/TripsPage/trips-page';
-@import '../pages/UsersPage/users-page';
+@import '../pages/AdminPage/admin-page';
 
 @import '../components/Logo/logo';
 @import '../components/Header/header';
@@ -15,7 +15,7 @@
 @import '../components/UserCard/user-card';
 @import '../components/forms/EmailForm/email-form';
 @import '../components/forms/PhoneForm/phone-form';
-
+@import '../components/forms/TripForm/trip-form';
 
 body {
   font-family: 'Mulish', sans-serif;

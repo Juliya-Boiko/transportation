@@ -1,0 +1,12 @@
+.admin-page {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-size: 10px;
+
+  & &__create-btn {
+    display: block;
+    width: 100%;
+    margin: 0 0 40px 0;
+    text-transform: uppercase;
+  }
+}

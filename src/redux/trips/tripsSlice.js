@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getAllTrips } from "./tripsOperations";
+import { getAllTrips, addTrip } from "./tripsOperations";
 
 const initialState = {
   trips: []
@@ -12,6 +12,9 @@ export const tripsSlice = createSlice({
     builder
     .addCase(getAllTrips.fulfilled, (state, { payload }) => {
       state.trips = [...payload];
+    })
+    .addCase(addTrip, (state, { payload }) => {
+      
     })
   },
 });

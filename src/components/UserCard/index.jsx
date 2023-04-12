@@ -1,11 +1,9 @@
 import { userStatus } from 'constants/userStatus';
-import ListGroup from 'react-bootstrap/ListGroup';
-import Dropdown from 'react-bootstrap/Dropdown';
 import { useDispatch } from 'react-redux';
 import { updateUserStatus } from 'redux/users/usersOperations';
 import { useState } from 'react';
 import Card from 'react-bootstrap/Card';
-
+import Dropdown from 'react-bootstrap/Dropdown';
 
 export const UserCard = ({ item }) => {
   const dispatch = useDispatch();
@@ -43,25 +41,5 @@ export const UserCard = ({ item }) => {
         </Card.Text>
       </Card.Body>
     </Card>
-
-
-
-
-    // <ListGroup.Item>
-    //   <p>Name: {displayName}</p>
-    //   <p>Email: {email}</p>
-    //   <p>Phone: {phone}</p>
-    //   <Dropdown size="sm" >
-    //     <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-    //       {currentStatus}
-    //     </Dropdown.Toggle>
-
-    //     <Dropdown.Menu style={{ margin: 0 }}>
-    //     {userStatus.map(({ id, status }) => {
-    //       return <Dropdown.Item key={id} onClick={() => selectHandler(userId, status)}>{status}</Dropdown.Item>
-    //     })}
-    //     </Dropdown.Menu>
-    //     </Dropdown>
-    // </ListGroup.Item>
   );
 };

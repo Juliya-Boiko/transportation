@@ -19,7 +19,7 @@ export const Header = () => {
         </button>
 
         <nav className='header__nav'>
-          {isAdmin ? <NavLink className="header__link" to='/users'>editing users</NavLink> : null}
+          {isAdmin ? <NavLink className="header__link" to='/users'>admin dashboard</NavLink> : null}
           <NavLink to='/' className="header__link">Homepage</NavLink>
           <NavLink to='/trips' className="header__link">Trips</NavLink>
           <NavLink className="header__link">Settings</NavLink>
