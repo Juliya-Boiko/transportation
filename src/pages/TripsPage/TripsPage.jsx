@@ -30,7 +30,6 @@ const TripsPage = () => {
       return { ...prevState, [name]: value.trim() }
     })
   };
-  //console.log(filters);
 
   return (
     <>
