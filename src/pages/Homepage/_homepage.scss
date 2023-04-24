@@ -1,5 +1,11 @@
 .homepage {
-  min-height: 100vh;
-  display: flex;
+  padding-top: 40px;
+  @extend %flex-center;
   flex-direction: column;
+  color: $brand;
+
+  & &__title {
+    text-align: center;
+    margin: 0 0 40px 0;
+  }
 }
