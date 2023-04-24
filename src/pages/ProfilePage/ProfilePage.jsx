@@ -4,13 +4,10 @@ import Button from 'react-bootstrap/Button';
 import { useDispatch } from "react-redux";
 import { logoutUser } from "redux/auth/authOperations";
 import { HiOutlineUserCircle } from "react-icons/hi";
-// 
 
 const ProfilePage = () => {
   const dispatch = useDispatch();
   const { email = '', displayName = '', phoneNumber = '', photoURL = '' } = authentication.currentUser;
-
-  //console.log(authentication.currentUser);
 
   return (
     <>
@@ -40,7 +37,8 @@ const ProfilePage = () => {
             {phoneNumber}
           </p>
 
-          <Button variant="outline-danger" className="profile-page__logout-btn" onClick={() => dispatch(logoutUser())} >Logout</Button>
+          <Button variant="outline-danger" className="profile-page__logout-btn" onClick={() => dispatch(logoutUser())}>Logout</Button>
+
         </div>
 
       </main>
